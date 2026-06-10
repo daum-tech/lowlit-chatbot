@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LOWLIT 챗봇 — 무엇이든 물어보세요</title>
+<meta name="description" content="로우리트콜렉티브 챗봇입니다. 제품·주문·배송·협업 문의를 도와드려요.">
+<meta property="og:title" content="LOWLIT COLLECTIVE 챗봇">
+<meta property="og:description" content="제품·주문·배송·협업까지, 무엇이든 물어보세요.">
+<style>
+  html,body{margin:0;height:100%;font-family:'Apple SD Gothic Neo','맑은 고딕',system-ui,sans-serif}
+  body{background:linear-gradient(160deg,#2F3437 0%,#3c4347 45%,#586059 100%);color:#fff;
+       display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+  .logo{font-size:13px;letter-spacing:4px;opacity:.8;margin-bottom:18px}
+  h1{font-weight:600;font-size:26px;line-height:1.4;margin:0 0 14px}
+  p{font-size:14px;line-height:1.7;opacity:.9;max-width:420px;margin:0 0 28px}
+  .cta{background:#fff;color:#2F3437;border:0;border-radius:30px;padding:14px 26px;
+       font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  .hint{margin-top:18px;font-size:12px;opacity:.7}
+</style>
+</head>
+<body>
+  <div class="logo">LOWLIT COLLECTIVE</div>
+  <h1>무엇이든 물어보세요 🙂</h1>
+  <p>제품·주문·배송·교환/반품·협업까지<br>로우리트 챗봇이 바로 도와드려요.</p>
+  <button class="cta" id="openChat">💬 챗봇 시작하기</button>
+  <div class="hint">아래 버튼이 자동으로 열리지 않으면 위 버튼이나 우측 하단 💬 을 눌러주세요.</div>
+
+  <!-- ▼ 챗봇 위젯: 외부 호스팅된 파일 한 줄로 불러옵니다.
+       (같은 폴더에 lowlit-chatbot.js 가 함께 올라가 있으면 아래 경로 그대로 두면 됩니다) -->
+  <script src="lowlit-chatbot.js"></script>
+
+  <script>
+    // 단독 링크로 들어왔을 때 챗봇을 자동으로 열어줍니다.
+    function openLLT(){ var b=document.getElementById('llt-btn'); if(b){ b.click(); return true; } return false; }
+    window.addEventListener('load', function(){
+      setTimeout(function(){ openLLT(); }, 600);
+    });
+    document.getElementById('openChat').addEventListener('click', function(){
+      if(!openLLT()){ alert('챗봇을 불러오는 중이에요. 잠시 후 다시 눌러주세요.'); }
+    });
+  </script>
+</body>
+</html>
