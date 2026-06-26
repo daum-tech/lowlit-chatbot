@@ -773,7 +773,7 @@
         {
           "key": "f1782495334546",
           "label": "개인정보 수집 및 이용에 동의합니다.",
-          "type": "text",
+          "type": "consent",
           "required": true
         }
       ],
